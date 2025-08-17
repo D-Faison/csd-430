@@ -1,0 +1,53 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    External CSS for mainBooks
+*/
+
+/* General page styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background:#E6E6FA;
+    color:#483D8B;
+}
+
+/* Title */
+h1 {
+    text-align: center;
+    color: #BA55D3;
+}
+
+/* Paragraphs */
+p {
+    text-align: center;
+    font-size: 1.1em;
+}
+
+/* Table styling */
+table {
+    margin: 20px auto;
+    border-collapse: collapse;
+    width: 80%;
+    background: #ffffff;
+    box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+}
+
+th, td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+th {
+    background-color: #4B0082;
+    color: #fff;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #D8BFD8;
+}
+
