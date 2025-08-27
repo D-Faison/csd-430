@@ -1,0 +1,52 @@
+<!--DeJanae Faison
+M3: JSP Forms Job Application -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> &#x2622; =| Game Design |=  &#x2622;</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="faison3style.css">
+    </head>
+    <body>
+        <h1>Join our team!</h1>
+        <h3>Have a creative drive? Passion for games? Apply!</h3>
+        <br>
+        <div class="formbody">
+            <h4>Game Design</h4>
+            <p>Remote</p>
+           <!-- send the form data to the file and post -->
+            <form action="submissionDisplay3Faison.jsp" method="post">
+                <!--First Name-->
+                <label for="firstName"> First Name </label>
+                <input type="text" name="firstName" id="firstName" placeholder="John"><br>
+                
+                <!--Last Name-->
+                <label for="lastName">Last Name </label>
+                <input type="text" name="lastName" id="lastName" placeholder="Doe"><br><br>
+               
+                <!--Desired Position-->
+                <label for="position">Desired Position</label>
+                <select name="position" id="position">
+                    <option value="3d Designer">3D Designer</option>
+                    <option value="Concept Artist">Concept Artist</option>
+                    <option value="Level Design">Level Design</option>
+                </select><br>
+                <br>
+                <!--Email-->
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" placeholder="john.doe@example.com"><br>
+               
+                <!--Phone-->
+                <label for="phoneNumber">Phone</label>
+                <input type="tel" name="phoneNumber" id="phoneNumber" placeholder="123-456-7890"><br>
+               
+                <!--Website-->
+                <label for="website">Website,Blog or Portfolio</label>
+                <input type="url" name="website" id="website" placeholder="https://example.com"><br>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,73 @@
+/*M3 Style sheet*/
+
+
+body{
+    /*background-color: rgb(15, 0, 49);*/
+    background-image: url('steve-johnson-BlKuLn9vHWo-unsplash.jpg');
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1,h3{
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
+
+h5{
+    font-weight: bold;
+    text-decoration: underline solid black;
+}
+
+.formbody{
+    background-color: rgba(255, 255, 255, 0.555);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgb(255, 255, 255);
+    width: 50%;
+    padding: 20px;
+    margin: 0 auto;
+    border-radius: 5px;
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.5);
+}
+
+
+input{
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid rgb(200, 200, 200);
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+    background-color: lightgreen;
+    max-width:50% ;
+}
+
+.tablebox{
+    margin: 20px auto;
+}
+
+th{
+    background-color: darkblue;
+    color:white;
+    font-weight:bold;
+}
+
+td{
+    padding: 10px;
+}
+
+
+tr:nth-child(even){
+    background-color: lightblue;
+}
+
+label{
+    font-weight: bold;
+}
+
+padding{
+    padding: 10px;
+}
