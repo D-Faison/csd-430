@@ -11,6 +11,10 @@ public class applicationBean implements java.io.Serializable{
     /*Job Application Variables*/
     private String firstName;
     private String lastName;
+    private String email;
+    private String phoneNumber;
+    private String website;
+    private String desiredPosition;
     
     public applicationBean(){}
     
@@ -30,5 +34,41 @@ public class applicationBean implements java.io.Serializable{
     
     public void setLastName(String lastName){
         this.lastName = lastName;
+    }
+    
+    /*Email*/
+    public String getEmail(){
+        return email;
+    }
+    
+    public void setEmail(String email){
+        this.email =  email;
+    }
+    
+    /*Phone*/
+    public String getPhoneNumber(){
+        return phoneNumber;
+    }
+    
+    public void setPhoneNumber(String phoneNumber){
+        this.phoneNumber = phoneNumber;
+    }
+    
+    /*Webiste*/
+    public String getWebsite(){
+        return website;
+    }
+    
+    public void setWebsite(String website){
+        this.website = website;
+    }
+    
+    /*Desired Position*/
+    public String getDesiredPosition(){
+        return desiredPosition;
+    }
+    
+    public void setDesiredPosition(String desiredPosition){
+        this.desiredPosition = desiredPosition;
     }
 }
