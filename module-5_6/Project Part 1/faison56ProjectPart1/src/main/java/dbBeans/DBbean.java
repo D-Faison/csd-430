@@ -15,9 +15,9 @@ public class DBbean implements java.io.Serializable {
     private double rating;
     private String genre;
     //Connection Variables
-    private String url ="jdbc:mysql://localhost:3306/csd340";
-    private String user = "student1";
-    private String password = "pass";
+    private final String url ="jdbc:mysql://localhost:3306/CSD340";
+    private final String user = "student1";
+    private final String password = "pass";
     
     //ID
     public int getID(){
@@ -69,23 +69,29 @@ public class DBbean implements java.io.Serializable {
         this.genre = genre;
     }
     
-    public ArrayList<Integer> fetchAllIDs(){
-        ArrayList<Integer> movieIDs = new ArrayList<>();
-        try(Connection conn = DriverManager.getConnection(url,user,password);
-            Statement stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT id FROM dejanae_movies_data")){
-            
-            while(rs.next()){
-                movieIDs.add(rs.getInt("id"));
+public ArrayList<Integer> fetchAllIDs() {
+    ArrayList<Integer> movieIDs = new ArrayList<>();
+    try {
+        // Ensure driver is loaded
+        Class.forName("com.mysql.cj.jdbc.Driver");
+
+        try (Connection conn = DriverManager.getConnection(url, user, password);
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery("SELECT id FROM dejanae_movies_data")) {
+
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                System.out.println("Fetched ID: " + id); // Debugging
+                movieIDs.add(id);
             }
-        
-        }catch(Exception e){
-            e.printStackTrace();
-            System.out.print("Error fetching table");
         }
-        
-        return movieIDs;
+    } catch (Exception e) {
+        e.printStackTrace();
+        System.out.println("Error fetching table");
     }
+    return movieIDs;
+}
+
     
     public DBbean getMovieByID(int id){
         DBbean movie = null;
