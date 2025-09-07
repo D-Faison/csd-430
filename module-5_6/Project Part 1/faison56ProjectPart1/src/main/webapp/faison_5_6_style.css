@@ -1,6 +1,9 @@
 /*Dejanae Faison
 *M5&6 Assignment Style Sheet
 */
+/*Dejanae Faison
+*M5&6 Assignment Style Sheet
+*/
 .concert-one-regular {
   font-family: "Concert One", sans-serif;
   font-weight: 400;
@@ -21,11 +24,11 @@ h1{
     border-radius: 10px;
 }
 
-h2,label{
+h2,label,h3{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-#viewMovieButton{
+#viewMovieButton,#backButton{
     background-color: darkmagenta;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: bolder;
@@ -37,12 +40,16 @@ h2,label{
 
 }
 
+#backButton{
+    margin: 20px;
+}
+
 .movieInfoBody{
     border: 3px solid whitesmoke;
     border-radius: 10px;
     background-color: rgba(255, 255, 255, 0.555);
     backdrop-filter: blur(10px);
-    width: 50%;
+    width: fit-content;
     height: auto;
     min-height: 100px;
     padding: 20px;
@@ -54,4 +61,19 @@ h2,label{
     border: none;
     border-radius: 5px;
     width: auto;
+}
+
+table,th,td{
+    padding: 12px;
+}
+
+th{
+    background-color: darkmagenta;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bolder;
+    color: aliceblue;
+}
+
+td{
+    background-color: rgba(240, 248, 255, 0.808);
 }

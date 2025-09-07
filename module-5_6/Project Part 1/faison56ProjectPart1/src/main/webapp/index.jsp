@@ -17,7 +17,7 @@
         <H1>Movie Finder</H1>
         <div class="movieInfoBody">
             <h2>Find your next favorite movie!</h2>
-            <form action="---file here---" method="post">
+            <form action="movieDisplay.jsp" method="post">
                 <label for="movieID">Select Movie to view details:</label>
                 <select name="movieID" id="movieID">
                     <%
