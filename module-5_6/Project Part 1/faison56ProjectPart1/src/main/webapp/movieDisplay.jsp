@@ -2,6 +2,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import = "dbBeans.DBbean" %>
 <%
+    //For each instance of ID, run the query
     int movieID = Integer.parseInt(request.getParameter("movieID"));
     DBbean movieBean = new DBbean();
     DBbean movie = movieBean.getMovieByID(movieID);
@@ -37,13 +38,14 @@
                 </thead>
                 <tbody>
                     <tr>
+                        <!-- Run function to get movie info -->
                         <td><%=movie.getID() %></td>
                         <td><%=movie.getMovieTitle()%></td>
                         <td><%=movie.getReleaseYear()%></td>
                         <td><%=movie.getRunTime()%></td>
                         <td><%=movie.getDirector()%></td>
                         <td><%=movie.getRating()%></td>
-                        <td>Horror</td>
+                        <td><%=movie.getGenre()%></td>
                     </tr>
                 </tbody>
             </table>

@@ -4,7 +4,7 @@ package dbBeans;
 import java.sql.*;
 import java.util.ArrayList;
 
-
+//Bean
 public class DBbean implements java.io.Serializable {
     //Establish setters and getters for movies
     private int id;
@@ -68,7 +68,8 @@ public class DBbean implements java.io.Serializable {
     public void setGenre(String genre){
         this.genre = genre;
     }
-    
+
+ //Create a list of all the IDs within the DB
 public ArrayList<Integer> fetchAllIDs() {
     ArrayList<Integer> movieIDs = new ArrayList<>();
     try {
@@ -92,12 +93,11 @@ public ArrayList<Integer> fetchAllIDs() {
     return movieIDs;
 }
 
-    
+    //Get movie info by their id
     public DBbean getMovieByID(int id){
         DBbean movie = null;
         try( Connection conn = DriverManager.getConnection(url,user,password);
             PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM dejanae_movies_data WHERE ID = ?") ){
-            
            pstmt.setInt(1, id);
            try(ResultSet rs = pstmt.executeQuery()){
                if(rs.next()){

@@ -21,8 +21,11 @@
                 <label for="movieID">Select Movie to view details:</label>
                 <select name="movieID" id="movieID">
                     <%
+                        //New moview bean
                         DBbean movieBean = new DBbean();
+                        //Create a list of IDs from the bean
                         ArrayList<Integer> ids = movieBean.fetchAllIDs();
+                        //for each id place it as a value in the options menu
                         for(Integer id:ids){
                     %>
                     <<option value="<%=id%>"><%=id%></option>
