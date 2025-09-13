@@ -117,5 +117,39 @@ public ArrayList<Integer> fetchAllIDs() {
         }
         return movie;
     }
+    //Insert User Movie into DB
+    @SuppressWarnings("CallToPrintStackTrace")
+    public int addUserMovie(String title, int year,String runTime, 
+            String director, double rating, String genre){
+        String insertStatement = "INSERT INTO dejanae_movies_data(MovieTitle,ReleaseYear,RunTime,Director,Rating,Genre)VALUES(?,?,?,?,?,?)";
+        
+        int newId = -1;
+        //Connect to DB and send back key
+        try(Connection conn = DriverManager.getConnection(url,user,password);
+                PreparedStatement pstmt = conn.prepareStatement(insertStatement,Statement.RETURN_GENERATED_KEYS)){
+        
+            pstmt.setString(1, title);
+            pstmt.setInt(2,year);
+            pstmt.setString(3, runTime);
+            pstmt.setString(4, director);
+            pstmt.setDouble(5, rating);
+            pstmt.setString(6, genre);
+            int rowsAdded = pstmt.executeUpdate();
+            //Returns true if a row was added
+            if(rowsAdded > 0){
+                try(ResultSet rs = pstmt.getGeneratedKeys()){
+                    if(rs.next()){
+                        newId = rs.getInt(1);
+                    }
+                }
+            
+            }
+            
+        }catch(Exception e){
+            e.printStackTrace();
+            System.out.print("Failure to add movie"+newId);
+        }
+        return newId;
+    }
     
 }

@@ -28,11 +28,13 @@
                         //for each id place it as a value in the options menu
                         for(Integer id:ids){
                     %>
-                    <<option value="<%=id%>"><%=id%></option>
+                    <option value="<%=id%>"><%=id%></option>
                     <%}%>
                 </select>
                 <input type="submit" value="View Movie" id="viewMovieButton">
             </form>
+            <br>
+            <button id="createEntry"><a href="movieFormEntry.html">Create a Movie Entry</a></button>
         </div> 
     </body>
 </html>
