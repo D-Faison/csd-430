@@ -37,4 +37,7 @@
             <button id="createEntry"><a href="movieFormEntry.html">Create a Movie Entry</a></button>
         </div> 
     </body>
+    
+    <!-- Resources: -->
+    <!-- OpenAI. (2023). ChatGPT (Mar 14 version) [Large language model]. https://chat.openai.com/chat -->
 </html>
