@@ -1,4 +1,4 @@
-<%--DeJanae Faison M5&6 Assignment--%>
+<%--DeJanae Faison M7 Assignment--%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import = "dbBeans.DBbean" %>
 <%
