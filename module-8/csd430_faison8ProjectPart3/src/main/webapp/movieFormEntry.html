@@ -1,0 +1,44 @@
+<!-- DeJanae Faison M7 movie entry form -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>&#9630; Movie Finder &#9626;</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--Font-->
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
+        </style>
+        <link rel="stylesheet" href="faison_5_6_style.css">
+    </head>
+    <body>
+        <H1>Movie Finder</H1>
+        <div class="movieInfoBody">
+            <h2>Create a Movie Entry:</h2>
+            <!--Movie Form Input-->
+            <form action="displayAddedMovie.jsp" method="post" id="movieEntryFields">
+                <label>Movie Title:</label>
+                <input type="text" name="movieTitleInput" placeholder="Aliens">
+                <br>
+                <label>Release Year:</label>
+                <input type="number" name="movieYearInput" placeholder="2003">
+                <br>
+                <label>Run Time:</label>
+                <input type="text" name="movieRunTimeInput" placeholder="1hr45min">
+                <br>
+                <label>Director:</label>
+                <input type="text" name="movieDirectorInput" placeholder="Ruth Markson">
+                <br>
+                <label>Rating out of 10:</label>
+                <!--Step ensures rating stays within the correct parameters-->
+                <input type="number" name="movieRatingInput" step="0.1" placeholder="4.5">
+                <br>
+                <label>Genre(s):</label>
+                <input type="text" name="movieGenreInput" placeholder="Horror.Action">
+                
+                <input type="submit" value="Submit Movie" id="submitMovie">
+            </form>
+            
+        </div>
+    </body>
+</html>
