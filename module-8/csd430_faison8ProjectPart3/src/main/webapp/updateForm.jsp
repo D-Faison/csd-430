@@ -1,4 +1,4 @@
-
+<%--DeJanae Faison M8 Update Movie Form--%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="dbBeans.DBbean" %>
 <%
@@ -42,7 +42,7 @@
                 <input type="number" step="0.1" name="movieRating" value="<%=movie.getRating()%>"><br>
                 
                 <label>Genre:</label>
-                <input type="text" name="Genre" value="<%=movie.getGenre()%>"><br>
+                <input type="text" name="movieGenre" value="<%=movie.getGenre()%>"><br>
                 
                 <input type="submit" value="Save Update">
             </form>

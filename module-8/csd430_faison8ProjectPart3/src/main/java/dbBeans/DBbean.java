@@ -152,7 +152,7 @@ public ArrayList<Integer> fetchAllIDs() {
         return newId;
     }
     
-    // Update an existing movie record in the DB
+// Update an existing movie record in the DB
 public boolean updateMovie(int id, String title, int year, String runTime,
                            String director, double rating, String genre) {
     String updateSQL = "UPDATE dejanae_movies_data " +

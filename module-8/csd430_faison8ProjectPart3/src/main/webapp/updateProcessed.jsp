@@ -1,20 +1,20 @@
+<%--DeJanae Faison M8 Update Movie--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="dbBeans.DBbean" %>
 <%
     int id = Integer.parseInt(request.getParameter("movieID"));
-    String title = request.getParameter("title");
-    int year = Integer.parseInt(request.getParameter("year"));
-    String runTime = request.getParameter("runTime");
-    String director = request.getParameter("director");
-    double rating = Double.parseDouble(request.getParameter("rating"));
-    String genre = request.getParameter("genre");
+    String title = request.getParameter("movieTitle");
+    int year = Integer.parseInt(request.getParameter("movieReleaseYear"));
+    String runTime = request.getParameter("movieRunTime");
+    String director = request.getParameter("movieDirector");
+    double rating = Double.parseDouble(request.getParameter("movieRating"));
+    String genre = request.getParameter("movieGenre");
 
     DBbean movieBean = new DBbean();
     boolean updated = movieBean.updateMovie(id, title, year, runTime, director, rating, genre);
 
     DBbean movie = movieBean.getMovieByID(id);
 %>
-<!DOCTYPE html>
 <!DOCTYPE html>
 <html>
     <head>

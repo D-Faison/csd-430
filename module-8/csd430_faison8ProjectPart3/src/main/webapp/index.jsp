@@ -35,6 +35,8 @@
             </form>
             <br>
             <button id="createEntry"><a href="movieFormEntry.html">Create a Movie Entry</a></button>
+            <button><a href="updateSelect.jsp">Update a Movie</a></button>
+
         </div> 
     </body>
     
