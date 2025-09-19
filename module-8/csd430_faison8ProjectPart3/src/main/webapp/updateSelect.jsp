@@ -1,11 +1,6 @@
 <!-- DeJanae Faison M8- Select Movie to Update -->
 <%@page import = "dbBeans.DBbean" %>
-<%
-    //For each instance of ID, run the query
-    int movieID = Integer.parseInt(request.getParameter("movieID"));
-    DBbean movieBean = new DBbean();
-    ArrayList<Integer>ids = movieBean.getMovieByID(movieID);
-%>
+<%@page import = "java.util.ArrayList"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -21,21 +16,23 @@
     <body>
         <H1>Movie Finder</H1>
         <div class="movieInfoBody">
-            <h2>Select a movie to update:</h2>
+            <h2>Update a movie</h2>
             <!-Movie Update selection-->
-            <form action="" method="post">
-                <label for="movieID">Select Movie to view details:</label>
+            <form action="updateForm.jsp" method="post">
+                <label for="movieID">Select a movie to update: </label>
                 <select name="movieID" id="movieID">
                     <%
-
+                        DBbean movieBean = new DBbean();
+                        ArrayList<Integer> ids = movieBean.fetchAllIDs();
                         for(Integer id:ids){
                     %>
                     <option value="<%=id%>"><%=id%></option>
                     <%}%>
                 </select>
-                <input type="submit" value="View Movie" id="viewMovieButton">
+                <input type="submit" value="Update">
             </form>
-            
+            <br>
+            <a href="index.jsp" id="backButton">Back to Search</a>
         </div>
     </body>
 </html>
