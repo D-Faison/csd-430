@@ -42,7 +42,7 @@
                 <input type="number" step="0.1" name="movieRating" value="<%=movie.getRating()%>"><br>
                 
                 <label>Genre:</label>
-                <input type="text" name="movieGenre"<%=movie.getDirector()%>"><br>
+                <input type="text" name="Genre" value="<%=movie.getGenre()%>"><br>
                 
                 <input type="submit" value="Save Update">
             </form>

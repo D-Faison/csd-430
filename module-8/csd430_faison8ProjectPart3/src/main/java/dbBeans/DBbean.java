@@ -152,4 +152,39 @@ public ArrayList<Integer> fetchAllIDs() {
         return newId;
     }
     
+    // Update an existing movie record in the DB
+public boolean updateMovie(int id, String title, int year, String runTime,
+                           String director, double rating, String genre) {
+    String updateSQL = "UPDATE dejanae_movies_data " +
+                       "SET MovieTitle = ?, ReleaseYear = ?, RunTime = ?, " +
+                       "Director = ?, Rating = ?, Genre = ? " +
+                       "WHERE ID = ?";
+
+    boolean success = false;
+
+    try (Connection conn = DriverManager.getConnection(url, user, password);
+         PreparedStatement pstmt = conn.prepareStatement(updateSQL)) {
+
+        // Set parameter values
+        pstmt.setString(1, title);
+        pstmt.setInt(2, year);
+        pstmt.setString(3, runTime);
+        pstmt.setString(4, director);
+        pstmt.setDouble(5, rating);
+        pstmt.setString(6, genre);
+        pstmt.setInt(7, id);
+
+        // Execute update
+        int rowsUpdated = pstmt.executeUpdate();
+        success = rowsUpdated > 0;
+
+    } catch (Exception e) {
+        e.printStackTrace();
+        System.out.println("Error updating movie with ID: " + id);
+    }
+
+    return success;
+}
+
+    
 }
