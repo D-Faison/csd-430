@@ -44,7 +44,7 @@
                 <label>Genre:</label>
                 <input type="text" name="movieGenre" value="<%=movie.getGenre()%>"><br>
                 
-                <input type="submit" value="Save Update">
+                <input type="submit" value="Save Update" id="saveUpdate">
             </form>
         </div>
     </body>

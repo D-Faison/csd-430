@@ -25,9 +25,10 @@ h2,label,h3{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-button,#createEntry,#submitMovie,a{
+button,#createEntry,#submitMovie,a,#viewMovieButton,#backButton,#saveUpdate,#updateSelect{
     background-color: darkmagenta;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration: none;
     font-weight: bolder;
     color: aliceblue;
     border: none;

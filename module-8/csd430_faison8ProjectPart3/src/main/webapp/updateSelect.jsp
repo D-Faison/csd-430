@@ -21,6 +21,7 @@
             <form action="updateForm.jsp" method="post">
                 <label for="movieID">Select a movie to update: </label>
                 <select name="movieID" id="movieID">
+                    <!-- Just like the search, iterate through the ids for an option -->
                     <%
                         DBbean movieBean = new DBbean();
                         ArrayList<Integer> ids = movieBean.fetchAllIDs();
@@ -29,7 +30,7 @@
                     <option value="<%=id%>"><%=id%></option>
                     <%}%>
                 </select>
-                <input type="submit" value="Update">
+                <input type="submit" value="Update" id="updateSelect">
             </form>
             <br>
             <a href="index.jsp" id="backButton">Back to Search</a>

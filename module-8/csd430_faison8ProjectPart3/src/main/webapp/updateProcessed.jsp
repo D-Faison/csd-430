@@ -2,6 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="dbBeans.DBbean" %>
 <%
+    /*Fetch the variables from the bean*/
     int id = Integer.parseInt(request.getParameter("movieID"));
     String title = request.getParameter("movieTitle");
     int year = Integer.parseInt(request.getParameter("movieReleaseYear"));
