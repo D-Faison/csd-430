@@ -31,12 +31,12 @@
                     <option value="<%=id%>"><%=id%></option>
                     <%}%>
                 </select>
-                <input type="submit" value="View Movie" id="viewMovieButton">
+                <input type="submit" class="purpleButton" value="View Movie" id="viewMovieButton">
             </form>
             <br>
-            <button id="createEntry"><a href="movieFormEntry.html">Create a Movie Entry</a></button>
-            <button><a href="updateSelect.jsp">Update a Movie</a></button>
-
+            <button class="purpleButton" id="createEntry"><a href="movieFormEntry.html" class="purpleButton">Create a Movie Entry</a></button>
+            <button class="purpleButton"><a href="updateSelect.jsp" class="purpleButton">Update a Movie</a></button>
+            <button class="purpleButton"><a href="deleteSelect.jsp" class="purpleButton">Delete a Movie</a></button>
         </div> 
     </body>
     

@@ -1,4 +1,4 @@
-<!-- DeJanae Faison M8- Select Movie to Update -->
+<!-- DeJanae Faison M9- Select Movie to Delete -->
 <%@page import = "dbBeans.DBbean" %>
 <%@page import = "java.util.ArrayList"%>
 <!DOCTYPE html>
@@ -16,8 +16,8 @@
     <body>
         <H1>Movie Finder</H1>
         <div class="movieInfoBody">
-            <h2>Update a movie</h2>
-            <!-Movie Update selection-->
+            <h2>Delete a Movie</h2>
+            <!-Movie Delete selection-->
             <form action="updateForm.jsp" method="post">
                 <label for="movieID">Select a movie to update: </label>
                 <select name="movieID" id="movieID">

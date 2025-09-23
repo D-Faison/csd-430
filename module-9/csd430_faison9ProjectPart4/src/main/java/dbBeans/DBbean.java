@@ -186,5 +186,8 @@ public boolean updateMovie(int id, String title, int year, String runTime,
     return success;
 }
 
+    //Delete Movie Entry
+    
+
     
 }

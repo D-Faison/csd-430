@@ -62,7 +62,7 @@
                 <p>Error updating movie.</p>
             <% } %>
             <br>
-            <a href="index.jsp" id="backButton">Back to Search</a>
+            <a href="index.jsp" class="purpleButton" id="backButton">Back to Search</a>
         </div>
     </body>
 </html>
