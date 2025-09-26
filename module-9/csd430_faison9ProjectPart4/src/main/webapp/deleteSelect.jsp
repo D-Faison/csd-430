@@ -1,6 +1,25 @@
 <!-- DeJanae Faison M9- Select Movie to Delete -->
 <%@page import = "dbBeans.DBbean" %>
 <%@page import = "java.util.ArrayList"%>
+<%
+    DBbean bean = new DBbean();
+    String statusMessage = null;
+    
+    //Handle Delete action
+    //If there is an ID delete it and if not, share message
+    //Get id
+    String deleteId = request.getParameter("deleteID");
+    if(deleteId != null){
+        try{
+        
+            int idToDelete = Integer.parseInt(deleteId);
+    
+        }catch(Exception e){
+            statusMessage = "Error Deleting Record: " + e.getMessage();
+        }
+    
+    }
+%>
 <!DOCTYPE html>
 <html>
     <head>

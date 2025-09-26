@@ -179,7 +179,6 @@ public boolean updateMovie(int id, String title, int year, String runTime,
         success = rowsUpdated > 0;
 
     } catch (Exception e) {
-        e.printStackTrace();
         System.out.println("Error updating movie with ID: " + id);
     }
 
@@ -187,7 +186,23 @@ public boolean updateMovie(int id, String title, int year, String runTime,
 }
 
     //Delete Movie Entry
+    @SuppressWarnings("CallToPrintStackTrace")
+    public boolean deleteMovieByID(int id){
+        String deleteSQL = "DELETE FROM dejanae_movies_data WHERE ID = ?";
+        try(Connection conn = DriverManager.getConnection(url, user, password);
+            PreparedStatement pstmt = conn.prepareStatement(deleteSQL)){
+            
+            pstmt.setInt(1, id);
+            
+            int rowsDeleted = pstmt.executeUpdate();
+            return rowsDeleted > 0;
+        
+        }catch(Exception e){
+            e.printStackTrace();
+            return false;
+        }
     
+    }
 
     
 }
