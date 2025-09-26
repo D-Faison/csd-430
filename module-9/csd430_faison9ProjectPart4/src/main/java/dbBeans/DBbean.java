@@ -187,21 +187,26 @@ public boolean updateMovie(int id, String title, int year, String runTime,
 
     //Delete Movie Entry
     @SuppressWarnings("CallToPrintStackTrace")
-    public boolean deleteMovieByID(int id){
-        String deleteSQL = "DELETE FROM dejanae_movies_data WHERE ID = ?";
-        try(Connection conn = DriverManager.getConnection(url, user, password);
-            PreparedStatement pstmt = conn.prepareStatement(deleteSQL)){
-            
-            pstmt.setInt(1, id);
-            
-            int rowsDeleted = pstmt.executeUpdate();
-            return rowsDeleted > 0;
+    public DBbean deleteMovieByID(int id){
+        //Fertch before deleting
+        DBbean deletedMovie = getMovieByID(id);
         
-        }catch(Exception e){
+        if(deletedMovie != null){
+            String deleteSQL = "DELETE FROM dejanae_movies_data WHERE ID = ?";
+            try(Connection conn = DriverManager.getConnection(url, user, password);
+                PreparedStatement pstmt = conn.prepareStatement(deleteSQL)){
+            
+                    pstmt.setInt(1, id);
+            
+                    pstmt.executeUpdate();
+       
+        
+            }catch(Exception e){
             e.printStackTrace();
-            return false;
+            return null;
+            }
         }
-    
+        return deletedMovie;
     }
 
     
