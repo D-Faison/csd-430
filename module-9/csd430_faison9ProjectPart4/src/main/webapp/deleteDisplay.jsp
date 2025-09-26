@@ -9,7 +9,7 @@
     if (deleteId != null) {
         try {
             int idToDelete = Integer.parseInt(deleteId);
-            //deletedMovie = bean.deleteMovieByID(idToDelete);
+            deletedMovie = bean.deleteMovieByID(idToDelete);
         } catch (Exception e) {
             out.println("<p style='color:red;'>Error deleting record.</p>");
         }
@@ -30,10 +30,33 @@
     <body>
           <H1>Movie Finder</H1>
         <div class="movieInfoBody">
-            <h2>Deleted Movie:</h2>
-            
-            
-            
+            <!-- Display Deleted Movie -->
+            <h2>Deleted Movie Successful:</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Movie Title</th>
+                        <th>Release Year</th>
+                        <th>Run Time</th>
+                        <th>Director</th>
+                        <th>Rating</th>
+                        <th>Genre</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td> <%=deletedMovie.getID()%></td>
+                        <td> <%=deletedMovie.getMovieTitle()%></td>
+                        <td> <%=deletedMovie.getReleaseYear()%></td>
+                        <td> <%=deletedMovie.getRunTime()%></td>
+                        <td> <%=deletedMovie.getDirector()%></td>
+                        <td> <%=deletedMovie.getRating()%></td>
+                        <td> <%=deletedMovie.getGenre()%></td>
+                    </tr>
+                </tbody>
+            </table>
+            <!-- Display the Other movies -->
             <h3>Remaining Movies:</h3>
 
             <a href="index.jsp" class="purpleButton" id="backButton">Back to Search</a>

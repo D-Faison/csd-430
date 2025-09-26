@@ -92,7 +92,7 @@ public ArrayList<Integer> fetchAllIDs() {
     return movieIDs;
 }
 
-    //Get movie info by their id
+    //Get one movie info by their id
     public DBbean getMovieByID(int id){
         DBbean movie = null;
         try( Connection conn = DriverManager.getConnection(url,user,password);
@@ -117,6 +117,35 @@ public ArrayList<Integer> fetchAllIDs() {
         }
         return movie;
     }
+    
+    //View all the movies
+    @SuppressWarnings("CallToPrintStackTrace")
+    public ArrayList<DBbean> fetchAllMovies(){
+        ArrayList<DBbean> movies = new ArrayList<>();
+        String selectSQL = "SELECT * FROM dejanae_movies_data";
+        try( Connection conn = DriverManager.getConnection(url,user,password);
+                Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery(selectSQL)){
+            
+            while(rs.next()){
+                DBbean movie = new DBbean();
+                movie.setID(rs.getInt("ID"));
+                movie.setID(rs.getInt("ID"));
+                movie.setMovieTitle(rs.getString("MovieTitle"));
+                movie.setReleaseYear(rs.getInt("ReleaseYear"));
+                movie.setRunTime(rs.getString("RunTime"));
+                movie.setDirector(rs.getString("Director"));
+                movie.setRating(rs.getDouble("Rating"));
+                movie.setGenre(rs.getString("Genre"));
+            }
+        
+        }catch(Exception e){
+        
+            e.printStackTrace();
+        }
+        
+        return movies;
+    }
+    
     //Insert User Movie into DB
     @SuppressWarnings("CallToPrintStackTrace")
     public int addUserMovie(String title, int year,String runTime, 
