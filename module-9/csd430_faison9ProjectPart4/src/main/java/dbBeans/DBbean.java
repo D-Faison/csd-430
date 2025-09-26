@@ -136,6 +136,8 @@ public ArrayList<Integer> fetchAllIDs() {
                 movie.setDirector(rs.getString("Director"));
                 movie.setRating(rs.getDouble("Rating"));
                 movie.setGenre(rs.getString("Genre"));
+                //Add movie to movies array
+                movies.add(movie);
             }
         
         }catch(Exception e){

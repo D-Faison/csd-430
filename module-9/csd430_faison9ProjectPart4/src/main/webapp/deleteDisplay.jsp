@@ -1,6 +1,6 @@
 <!-- DeJanae Faison M9- Display Deleted Movie -->
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page import = "dbBeans.DBbean" %>
+<%@page import = "dbBeans.DBbean, java.util.ArrayList" %>
 <%
     String deleteId = request.getParameter("deleteID");
     DBbean bean = new DBbean();
@@ -14,6 +14,9 @@
             out.println("<p style='color:red;'>Error deleting record.</p>");
         }
     }
+    
+    //Fetch all movies
+    ArrayList<DBbean> movies = bean.fetchAllMovies();
 %>
 <!DOCTYPE html>
 <html>
@@ -57,10 +60,38 @@
                 </tbody>
             </table>
             <!-- Display the Other movies -->
-            <h3>Remaining Movies:</h3>
-
+            <h2>Remaining Movies:</h2>
+            <table>
+                 <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Movie Title</th>
+                        <th>Release Year</th>
+                        <th>Run Time</th>
+                        <th>Director</th>
+                        <th>Rating</th>
+                        <th>Genre</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <%for (DBbean m : movies){%>
+                    <tr>
+                        <td><%=m.getID()%></td>
+                        <td><%=m.getMovieTitle()%></td>
+                        <td><%=m.getReleaseYear()%></td>
+                        <td><%=m.getRunTime()%></td>
+                        <td><%=m.getDirector()%></td>
+                        <td><%=m.getRating()%></td>
+                        <td><%=m.getGenre()%></td>
+                    </tr>
+                    <%}%>
+                </tbody>
+            </table>
+                
+            <br>
             <a href="index.jsp" class="purpleButton" id="backButton">Back to Search</a>
             <a href="deleteSelect.jsp" class="purpleButton">Delete Another Entry</a>
+            <br>
         </div>
     </body>
 </html>
