@@ -31,6 +31,7 @@
                     <option value="<%=id%>"><%=id%></option>
                     <%}%>
                 </select>
+                <br>
                 <input type="submit" class="purpleButton" value="View Movie" id="viewMovieButton">
             </form>
             <br>

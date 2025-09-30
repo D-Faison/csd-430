@@ -39,6 +39,7 @@
                     %>
                   
                 </select>
+                <br>
                 <input type="submit" value="Delete Movie" class="purpleButton" id="deleteSelect">
             </form>
             <br>
